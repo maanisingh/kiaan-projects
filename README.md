@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kiaan Connect - Modern CRM Platform
 
-## Getting Started
+A beautiful, feature-rich Customer Relationship Management (CRM) application built with Next.js 16, React 19, and modern web technologies.
 
-First, run the development server:
+![Kiaan Connect](https://img.shields.io/badge/Platform-1%2F20-blue)
+![Next.js](https://img.shields.io/badge/Next.js-16.0.3-black)
+![React](https://img.shields.io/badge/React-19.2.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+
+## 🚀 Features
+
+### Landing Page
+- ✨ Animated hero section with gradient text
+- 📊 Feature showcase cards
+- 💼 Dashboard preview mockup
+- 📈 Benefits and statistics section
+- 🎨 Professional Kiaan Technology branding
+
+### CRM Dashboard
+- 📊 **Metrics Cards**: Total Revenue, Active Deals, Win Rate, Average Deal Size
+- 📈 **Revenue Trend Chart**: Interactive line chart with 11 months of data
+- 📊 **Sales Pipeline**: Visual bar chart showing deals by stage
+- 👥 **Contact Management**: Recent contacts with avatars and status badges
+- 🎯 **Deal Tracking**: Active deals with progress bars and probability indicators
+- ✅ **Task Management**: Upcoming tasks with priorities and due dates
+- 📝 **Activity Timeline**: Email, calls, meetings, and notes tracking
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16.0.3 (App Router)
+- **UI Library**: React 19.2.0
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion 12.23.24
+- **Charts**: Recharts 3.4.1
+- **Icons**: Lucide React 0.554.0
+- **Date Handling**: date-fns 4.1.0
+
+## 📦 Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Railway Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is optimized for Railway deployment:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push to GitHub
+2. Connect to Railway
+3. Railway auto-detects Next.js and deploys
+4. No environment variables required
 
-## Learn More
+**Build Command**: `npm run build`  
+**Start Command**: `npm start`
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗️ Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+connect/
+├── app/
+│   ├── page.tsx              # Landing page
+│   ├── dashboard/
+│   │   └── page.tsx          # CRM Dashboard
+│   └── layout.tsx            # Root layout
+├── lib/
+│   ├── data.ts               # Dummy CRM data
+│   └── utils.ts              # Utility functions
+└── package.json
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📊 Sample Data
 
-## Deploy on Vercel
+- **5 Contacts**: Complete with companies and positions
+- **4 Deals**: Across pipeline stages
+- **4 Tasks**: With priorities and statuses
+- **Revenue Data**: 11 months of metrics
+- **Pipeline Data**: Deal values by stage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Platform 1 of 20** - Kiaan Technology Suite
