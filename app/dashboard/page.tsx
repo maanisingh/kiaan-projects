@@ -14,6 +14,9 @@ import {
   CheckCircle2,
   Clock,
   AlertCircle,
+  LayoutDashboard,
+  Settings,
+  Home,
 } from 'lucide-react'
 import Link from 'next/link'
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
@@ -21,30 +24,74 @@ import { contacts, deals, tasks, activities, metrics, revenueData, pipelineData 
 import { formatCurrency, formatDate } from '@/lib/utils'
 
 export default function Dashboard() {
+  const navItems = [
+    { name: 'Home', href: '/', icon: Home },
+    { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard, active: true },
+    { name: 'Contacts', href: '/contacts', icon: Users },
+    { name: 'Deals', href: '/deals', icon: Target },
+    { name: 'Tasks', href: '/tasks', icon: CheckCircle2 },
+    { name: 'Analytics', href: '/analytics', icon: BarChart3 },
+    { name: 'Settings', href: '/settings', icon: Settings },
+  ]
+
   return (
-    <div className="min-h-screen bg-slate-50">
-      {/* Header */}
-      <header className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">K</span>
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-slate-800">Kiaan Connect</h1>
-                <p className="text-sm text-slate-600">Welcome back!</p>
-              </div>
+    <div className="min-h-screen bg-slate-50 flex">
+      {/* Sidebar Navigation */}
+      <aside className="w-64 bg-white border-r border-slate-200 flex flex-col">
+        <div className="p-6 border-b border-slate-200">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold">K</span>
             </div>
-            <Link
-              href="/"
-              className="px-4 py-2 text-slate-600 hover:text-slate-800 transition-colors"
-            >
-              Back to Home
-            </Link>
+            <div>
+              <h1 className="text-xl font-bold text-slate-800">Kiaan Connect</h1>
+              <p className="text-xs text-slate-600">CRM Platform</p>
+            </div>
           </div>
         </div>
-      </header>
+        <nav className="flex-1 p-4">
+          <ul className="space-y-1">
+            {navItems.map((item) => {
+              const Icon = item.icon
+              return (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                      item.active
+                        ? 'bg-indigo-50 text-indigo-600'
+                        : 'text-slate-700 hover:bg-slate-50'
+                    }`}
+                  >
+                    <Icon className="w-5 h-5" />
+                    <span className="font-medium">{item.name}</span>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
+        <div className="p-4 border-t border-slate-200">
+          <div className="flex items-center gap-3 px-4 py-3">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-semibold">
+              JD
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-slate-900 truncate">John Doe</p>
+              <p className="text-xs text-slate-600 truncate">john@company.com</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      {/* Main Content */}
+      <div className="flex-1 overflow-auto">
+        <header className="bg-white border-b border-slate-200">
+          <div className="px-8 py-6">
+            <h2 className="text-2xl font-bold text-slate-800">Dashboard</h2>
+            <p className="text-slate-600 mt-1">Welcome back! Here's what's happening today.</p>
+          </div>
+        </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Metrics Cards */}
@@ -306,6 +353,7 @@ export default function Dashboard() {
             </div>
           </div>
         </motion.div>
+      </div>
       </div>
     </div>
   )
